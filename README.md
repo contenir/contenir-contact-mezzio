@@ -1,5 +1,8 @@
 # contenir/contenir-contact-mezzio
 
+[![Continuous Integration](https://github.com/contenir/contenir-contact-mezzio/actions/workflows/continuous-integration.yml/badge.svg)](https://github.com/contenir/contenir-contact-mezzio/actions/workflows/continuous-integration.yml)
+[![codecov](https://codecov.io/gh/contenir/contenir-contact-mezzio/graph/badge.svg)](https://codecov.io/gh/contenir/contenir-contact-mezzio)
+
 The Mezzio adapter for [contenir/contenir-contact](https://github.com/contenir/contenir-contact): the business and its
 offices from a Mezzio site's settings, a `contact()` view helper for templates, and contact formats drawn by the
 site's own templates.
