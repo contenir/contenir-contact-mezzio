@@ -1,0 +1,91 @@
+{
+    "name": "contenir/contenir-contact-mezzio",
+    "description": "Mezzio adapter for contenir/contenir-contact: the business and its offices from a Mezzio site's settings, a contact() view helper, and formats drawn by the site's own templates.",
+    "type": "library",
+    "license": "BSD-3-Clause",
+    "keywords": [
+        "contenir",
+        "mezzio",
+        "contact",
+        "office",
+        "opening-hours"
+    ],
+    "homepage": "https://contenir.com.au",
+    "support": {
+        "issues": "https://github.com/contenir/contenir-contact-mezzio/issues",
+        "source": "https://github.com/contenir/contenir-contact-mezzio"
+    },
+    "require": {
+        "php": "~8.3.0 || ~8.4.0 || ~8.5.0",
+        "contenir/contenir-contact": "^0.1",
+        "mezzio/mezzio-template": "^2.10 || ^3.0",
+        "psr/container": "^1.1 || ^2.0"
+    },
+    "require-dev": {
+        "contenir/contenir-qa-tools": "0.1.x-dev",
+        "infection/infection": "^0.34.1",
+        "laminas/laminas-servicemanager": "^3.22 || ^4.0",
+        "laminas/laminas-view": "^2.35",
+        "phpunit/phpunit": "^11.5.42"
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../contenir-contact"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Contenir\\Contact\\Mezzio\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Contenir\\Contact\\Mezzio\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "check": [
+            "@cs-check",
+            "@static-analysis",
+            "@test",
+            "@test-integration",
+            "@mutation-test"
+        ],
+        "cs-check": [
+            "mago format --check",
+            "mago lint"
+        ],
+        "cs-fix": [
+            "mago format",
+            "mago lint --fix"
+        ],
+        "static-analysis": "mago analyze",
+        "test": "phpunit --colors=always --testsuite unit",
+        "test-integration": "phpunit --colors=always --testsuite integration",
+        "test-coverage": "phpunit --colors=always --coverage-clover clover.xml",
+        "mutation-test": "infection"
+    },
+    "config": {
+        "platform": {
+            "php": "8.3.99"
+        },
+        "sort-packages": true,
+        "allow-plugins": {
+            "infection/extension-installer": true
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-main": "0.1.x-dev"
+        },
+        "laminas": {
+            "config-provider": "Contenir\\Contact\\Mezzio\\ConfigProvider"
+        }
+    },
+    "suggest": {
+        "laminas/laminas-view": "For the contact() view helper in laminas-view templates"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
