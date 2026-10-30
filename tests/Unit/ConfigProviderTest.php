@@ -12,9 +12,11 @@ use Contenir\Contact\Mezzio\Contact;
 use Contenir\Contact\Mezzio\Factory\BusinessFactory;
 use Contenir\Contact\Mezzio\Factory\ContactFactory;
 use Contenir\Contact\Mezzio\Factory\ContactHelperFactory;
+use Contenir\Contact\Mezzio\Factory\EscapeEmailHelperFactory;
 use Contenir\Contact\Mezzio\Factory\FormatsFactory;
 use Contenir\Contact\Mezzio\Factory\HtmlRendererFactory;
 use Contenir\Contact\Mezzio\View\ContactHelper;
+use Contenir\Contact\Mezzio\View\EscapeEmailHelper;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
@@ -34,7 +36,7 @@ final class ConfigProviderTest extends TestCase
     }
 
     #[Test]
-    public function registersTheServicesAndTheContactHelper(): void
+    public function registersTheServicesAndTheViewHelpers(): void
     {
         static::assertSame(
             [
@@ -47,8 +49,14 @@ final class ConfigProviderTest extends TestCase
                     ],
                 ],
                 'view_helpers' => [
-                    'aliases'   => ['contact' => ContactHelper::class],
-                    'factories' => [ContactHelper::class => ContactHelperFactory::class],
+                    'aliases'   => [
+                        'contact'     => ContactHelper::class,
+                        'escapeEmail' => EscapeEmailHelper::class,
+                    ],
+                    'factories' => [
+                        ContactHelper::class     => ContactHelperFactory::class,
+                        EscapeEmailHelper::class => EscapeEmailHelperFactory::class,
+                    ],
                 ],
             ],
             (new ConfigProvider())(),

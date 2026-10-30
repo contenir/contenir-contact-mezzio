@@ -6,6 +6,12 @@ adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-10-30
+
+### Added
+
+- The `escapeEmail()` view helper, giving contenir-contact's `EmailEscaper`.
+
 ## [0.1.0] - 2026-10-23
 
 ### Added
