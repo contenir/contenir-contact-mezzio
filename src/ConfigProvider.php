@@ -10,12 +10,14 @@ use Contenir\Contact\Format\HtmlRenderer;
 use Contenir\Contact\Mezzio\Factory\BusinessFactory;
 use Contenir\Contact\Mezzio\Factory\ContactFactory;
 use Contenir\Contact\Mezzio\Factory\ContactHelperFactory;
+use Contenir\Contact\Mezzio\Factory\EscapeEmailHelperFactory;
 use Contenir\Contact\Mezzio\Factory\FormatsFactory;
 use Contenir\Contact\Mezzio\Factory\HtmlRendererFactory;
 use Contenir\Contact\Mezzio\View\ContactHelper;
+use Contenir\Contact\Mezzio\View\EscapeEmailHelper;
 
 /**
- * The package's services, and the contact() view helper for laminas-view.
+ * The package's services, and the contact() and escapeEmail() view helpers for laminas-view.
  *
  * @api
  */
@@ -42,8 +44,14 @@ final class ConfigProvider
     public function getViewHelpers(): array
     {
         return [
-            'aliases'   => ['contact' => ContactHelper::class],
-            'factories' => [ContactHelper::class => ContactHelperFactory::class],
+            'aliases'   => [
+                'contact'     => ContactHelper::class,
+                'escapeEmail' => EscapeEmailHelper::class,
+            ],
+            'factories' => [
+                ContactHelper::class     => ContactHelperFactory::class,
+                EscapeEmailHelper::class => EscapeEmailHelperFactory::class,
+            ],
         ];
     }
 

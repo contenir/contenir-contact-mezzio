@@ -68,6 +68,17 @@ final class ApplicationTest extends TestCase
     }
 
     #[Test]
+    public function theEscapeEmailHelperWritesALinkThroughLaminasView(): void
+    {
+        $escape = self::view(self::container())->plugin('escapeEmail')();
+
+        static::assertSame(
+            '<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;%61%40%62%2e%61%75">&#97;&#64;&#98;&#46;&#97;&#117;</a>',
+            "<a href=\"{$escape->href('a@b.au')}\">{$escape->text('a@b.au')}</a>",
+        );
+    }
+
+    #[Test]
     public function theHelperDrawsAnOfficeThroughLaminasView(): void
     {
         $view    = self::view(self::container());
