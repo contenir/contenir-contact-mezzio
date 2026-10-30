@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9ead3d11e6425c26bf1eec493da3e859",
+    "content-hash": "124d7d9c789c5a5e14d8b81c82e911e8",
     "packages": [
         {
             "name": "contenir/contenir-contact",
-            "version": "dev-main",
+            "version": "v0.1.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/contenir/contenir-contact.git",
-                "reference": "cba93fc1a4419273e802f0ebe54558ed0b038374"
+                "url": "git@github.com:contenir/contenir-contact.git",
+                "reference": "1a0999fa0dd1b222ce1b31d1c369695f59327000"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/contenir/contenir-contact/zipball/cba93fc1a4419273e802f0ebe54558ed0b038374",
-                "reference": "cba93fc1a4419273e802f0ebe54558ed0b038374",
+                "url": "https://api.github.com/repos/contenir/contenir-contact/zipball/1a0999fa0dd1b222ce1b31d1c369695f59327000",
+                "reference": "1a0999fa0dd1b222ce1b31d1c369695f59327000",
                 "shasum": ""
             },
             "require": {
@@ -28,7 +28,6 @@
                 "infection/infection": "^0.34.1",
                 "phpunit/phpunit": "^11.5.42"
             },
-            "default-branch": true,
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -95,7 +94,7 @@
                 "issues": "https://github.com/contenir/contenir-contact/issues",
                 "source": "https://github.com/contenir/contenir-contact"
             },
-            "time": "2026-10-23T02:26:21+00:00"
+            "time": "2026-10-30T00:47:28+00:00"
         },
         {
             "name": "mezzio/mezzio-template",
